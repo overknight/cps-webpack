@@ -1,0 +1,151 @@
+@import "./src/scss/shared";
+
+@mixin btn-circle {
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  background-color: $buttonColor;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.menu-button {
+  font: inherit;
+  margin: $menuButtonMargin;
+  @include btn-circle;
+  transition: filter .6s;
+
+  &:hover {
+    filter: grayscale(70%);
+  }
+
+  &__text {
+    display: none;
+    vertical-align: top;
+    margin: 7px;
+    font-weight: 500;
+    @media (min-width: $screen-lg) {
+      display: inline-block;
+    }
+  }
+
+  &--burger {
+    @include btn-icon("burger");
+  }
+
+  &--close {
+    @include btn-icon("close");
+  }
+
+  &--search {
+    @include btn-icon("search");
+  }
+
+  &--call {
+    @include btn-icon("call");
+  }
+
+  &--feedback {
+    @include btn-icon("chat");
+  }
+
+  &--profile {
+    @include btn-icon("profile");
+  }
+
+  &--repair {
+    @mixin icon {
+      @include btn-icon("repair");
+    }
+    @include icon;
+    @media (min-width: $screen-lg) {
+      &::after {
+        @include icon;
+      }
+    }
+  }
+
+  &--checkstatus {
+    @mixin icon {
+      @include btn-icon("checkstatus");
+    }
+    @include icon;
+    @media (min-width: $screen-lg) {
+      &::after {
+        @include icon;
+      }
+    }
+  }
+
+  /*&--repair {
+    @media (min-width: $screen-lg) {
+      &::before {
+        content: attr(title);
+        display: inline-block;
+        width: 125px;
+        margin-left: -180px;
+        vertical-align: top;
+        line-height: 19px;
+      }
+    }
+  }*/
+
+  &--repair,
+  &--checkstatus {
+    @media (min-width: $screen-lg) {
+      background: none;
+      width: auto;
+      border-radius: 0;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        @include btn-circle;
+      }
+    }
+  }
+
+  &--service-purchase {
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    width: auto;
+    height: 30px;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: $buttonColor url(../../img/icon-dropdown.svg)
+                no-repeat 90% 8px / 9px;
+    color: #fff;
+
+    .swiper-initialized & {
+      margin-right: 7px;
+    }
+
+    @media (min-width: $screen-md) {
+      bottom: auto;
+      margin-top: 8px;
+      margin-right: 0;
+    }
+  }
+
+  &--submit {
+    width: auto;
+    height: 30px;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 30px;
+    background: $buttonColor url(../../img/icon-dropdown.svg)
+                no-repeat 90% 8px / 9px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    float: right;
+  }
+}

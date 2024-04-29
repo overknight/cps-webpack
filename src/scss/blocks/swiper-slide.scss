@@ -1,0 +1,250 @@
+@import "./src/scss/shared";
+
+.swiper-slide {
+  display: inline-block;
+  height: auto;
+  width: 224px;
+  margin: 5px;
+
+  .swiper-initialized & {
+    margin: 0;
+    margin-bottom: 30px;
+  }
+
+  &__button {
+    float: right;
+    margin-top: 15px;
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    background: url(../../img/icon-btn-go.svg) no-repeat left bottom;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  @mixin swiper-slide-default {
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: 15px 20px;
+    height: 72px;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+  }
+
+  &--brand {
+    .swiper-slide__content {
+      @include swiper-slide-default;
+
+      &--brand--apple,
+      &--brand--hp {
+        background-position-y: 12px;
+      }
+
+      &--brand--viewsonic,
+      &--brand--acer {
+        background-position-y: 25px;
+      }
+
+      &--brand--lenovo {
+        background-image: url(../../img/brands/lenovo.png);
+      }
+
+      &--brand--samsung {
+        background-image: url(../../img/brands/samsung.png);
+        background-position-y: 14px;
+      }
+      
+      &--brand--apple {
+        background-image: url(../../img/brands/apple.png);
+      }
+      
+      &--brand--viewsonic {
+        background-image: url(../../img/brands/viewsonic.png);
+      }
+      
+      &--brand--bosch {
+        background-image: url(../../img/brands/bosch.png);
+      }
+      
+      &--brand--hp {
+        /*background: #fff url(../../img/brands/hp.png) no-repeat 15px 12px;*/
+        background-image: url(../../img/brands/hp.png);
+      }
+      
+      &--brand--acer {
+        background-image: url(../../img/brands/acer.png);
+      }
+      
+      &--brand--sony {
+        background-image: url(../../img/brands/sony.png);
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      &:nth-child(1n + 7) {
+        display: none;
+      }
+
+      .swiper.expand-y &:nth-child(1n + 7)  {
+        display: inline-block;
+      }
+    }
+
+    @media (min-width: $screen-lg) {
+      &:nth-child(7),
+      &:nth-child(8) {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__content {
+    .swiper-initialized & {
+      width: 240px;
+      margin: 0 auto;
+      margin-bottom: 5px;
+    }
+  }
+
+  &--device-type {
+    width: auto;
+
+    .swiper-slide__content {
+      @include swiper-slide-default;
+      display: inline-block;
+      vertical-align: top;
+      width: 192px;
+      height: 160px;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .swiper-initialized & .swiper-slide__content {
+      display: block;
+    }
+
+    .swiper-slide__button {
+      margin: 0;
+      /* margin-top: 30px; */
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+    }
+
+    @media (min-width: $screen-md) {
+      &:nth-child(1n + 4) {
+        display: none;
+      }
+
+      .swiper.expand-y &:nth-child(1n + 4) {
+        display: inline-block;
+      }
+    }
+
+    @media (min-width: $screen-lg) {
+      &:nth-child(4) {
+        display: inline-block;
+      }
+    }
+  }
+
+  &--service {
+    .swiper-slide__content {
+      @include swiper-slide-default;
+      min-width: 210px;
+      height: auto;
+      position: relative;
+      /* background-color: #d1d1d1; */
+      padding: 0 10px;
+      padding-top: 5px;
+      margin: 0 15px;
+
+      p {
+        margin: 10px 0;
+      }
+
+      & p:nth-child(1)::before,
+      & p:nth-child(2)::before,
+      & p:nth-child(3)::before {
+        display: block;
+        color: #7e7e82;
+      }
+
+      & p:nth-child(1)::before {
+        content: "Ремонтные услуги";
+      }
+
+      & p:nth-child(2)::before {
+        content: "Цена";
+      }
+
+      & p:nth-child(3)::before {
+        content: "Срок";
+      }
+    }
+
+    .swiper-initialized & {
+      background: none;
+      .swiper-slide__content {
+        margin: 0 auto;
+        width: 250px;
+        height: 200px;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      width: 100%;
+      margin: 0;
+      background-color: #fff;
+
+      &:first-child {
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+      }
+
+      .swiper-slide__content {
+        display: flex;
+        justify-content: space-between;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid #eaeaea;
+        padding: 0;
+
+        p {
+          margin: 15px 0;
+        }
+
+        & p:nth-child(1)::before,
+        & p:nth-child(2)::before,
+        & p:nth-child(3)::before {
+          display: none;
+        }
+
+        p:nth-child(1) {
+          width: 360px;
+        }
+
+        p:nth-child(2),
+        p:nth-child(3) {
+          width: 90px;
+        }
+
+        p:nth-child(3) {
+          margin-right: 140px;
+        }
+      }
+
+      &:last-child .swiper-slide__content {
+        border-bottom: none;
+      }
+    }
+  }
+}

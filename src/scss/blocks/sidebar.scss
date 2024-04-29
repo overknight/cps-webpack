@@ -1,0 +1,123 @@
+@import "./src/scss/shared";
+
+.sidebar {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, .7);
+  backdrop-filter: blur(5px) saturate(.3);
+  width: 100%;
+  height: 100%;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: $bgColorSidebar;
+    width: 100%;
+    height: 100%;
+    transition: left .5s;
+
+    @media (min-width: $screen-md) {
+      width: 320px;
+      box-shadow: 5px 0px 24px 0px #0e185033;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: $sidebar-lg-width;
+      box-shadow: none;
+      transition: none;
+    }
+  }
+
+  .menu-button--search {
+    position: absolute;
+    right: 17px;
+    top: 24px;
+
+    @media (min-width: $screen-lg) {
+      top: 15px;
+    }
+  }
+
+  nav {
+    margin-top: 90px;
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+
+  &__nav-item {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #1b1c21;
+    font-weight: 600;
+    transition: background-color .37s;
+
+    &:hover {
+      background-color: #e1e1e1;
+    }
+  }
+
+  &__nav-item--selected {
+    background-image: url(nth($inlineContent, 1));
+    background-repeat: no-repeat;
+    background-size: 4px 100%;
+    font-weight: normal;
+  }
+
+  &__footer {
+    margin: 15px;
+
+    .menu-button--call {
+      margin-left: 0;
+    }
+  }
+
+  &__contacts {
+    display: block;
+    text-decoration: none;
+    color: #1b1c21;
+    margin: 15px 0;
+
+    &--email {
+      font-size: 1.1em;
+    }
+
+    &--phone {
+      font-weight: bold;
+      font-size: 1.4em;
+      margin-bottom: 27px;
+    }
+  }
+
+  &__lang-item {
+    text-decoration: none;
+    color: #1b1c21;
+    font-weight: 500;
+
+    &--selected {
+      color: #7e7e82;
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    &--visible {
+      display: block;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    display: block;
+    width: $sidebar-lg-width;
+    background: none;
+    backdrop-filter: none;
+
+    &--visible {
+      background: none;
+      backdrop-filter: none;
+    }
+  }
+}

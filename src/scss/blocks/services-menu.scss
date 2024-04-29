@@ -1,0 +1,34 @@
+@import "./src/scss/shared";
+
+.services-menu {
+  white-space: nowrap;
+  overflow-x: auto;
+
+  @media (min-width: $screen-lg) {
+    white-space: normal;
+  }
+}
+
+.services-menu__item {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-right: 15px;
+  text-decoration: none;
+  color: #7e7e82;
+  border: 2px solid transparent;
+  transition: border-color .9s;
+
+  &:first-child {
+    margin-left: 15px;
+  }
+
+  &--selected,
+  &:hover {
+    border-color: #b8ffec;
+  }
+
+  &--selected {
+    background-color: #fff;
+  }
+}
