@@ -15,6 +15,31 @@
   </head>
   <body>
     <header>
+      <div class="sidebar">
+        <div class="sidebar__content">
+          <button type="button" title="Поиск" class="menu-button menu-button--search"></button>
+          <nav>
+            <a href="#" class="sidebar__nav-item sidebar__nav-item--selected">Ремонт техники</a>
+            <a href="#" class="sidebar__nav-item">Услуги и сервисы</a>
+            <a href="#" class="sidebar__nav-item">Корпоративным клиентам</a>
+            <a href="#" class="sidebar__nav-item">Продавцам техники</a>
+            <a href="#" class="sidebar__nav-item">Партнерам</a>
+            <a href="#" class="sidebar__nav-item">Производителям</a>
+            <a href="#" class="sidebar__nav-item">Наши сервисные центры</a>
+            <a href="#" class="sidebar__nav-item">Контакты</a>
+          </nav>
+          <section class="sidebar__footer">
+            <button type="button" title="Заказать звонок" class="menu-button menu-button--call"></button>
+            <button type="button" title="Обратная связь" class="menu-button menu-button--feedback"></button>
+            <button type="button" title="Профиль" class="menu-button menu-button--profile"></button>
+            <a href="mailto: mail@cps.com" class="sidebar__contacts sidebar__contacts--email">mail@cps.com</a>
+            <a href="tel:88008908900" class="sidebar__contacts sidebar__contacts--phone">8 800 890 8900</a>
+            <span class="sidebar__lang-item--selected">RU</span>
+            <a href="?lang=en" class="sidebar__lang-item">EN</a>
+            <a href="?lang=ch" class="sidebar__lang-item">CH</a>
+          </section>
+        </div>
+      </div>
       <div class="btn-group-left">
         <a href="/" class="logo"><img src="img/logo.png" alt="CPS" /></a>
         <button type="button" title="Боковое меню" class="menu-button menu-button--burger"></button>
@@ -248,31 +273,6 @@
         <p>Информация, размещенная на данной странице, не является публичной офертой</p>
       </div>
     </footer>
-    <aside class="sidebar">
-      <div class="sidebar__content">
-        <button type="button" title="Поиск" class="menu-button menu-button--search"></button>
-        <nav>
-          <a href="#" class="sidebar__nav-item sidebar__nav-item--selected">Ремонт техники</a>
-          <a href="#" class="sidebar__nav-item">Услуги и сервисы</a>
-          <a href="#" class="sidebar__nav-item">Корпоративным клиентам</a>
-          <a href="#" class="sidebar__nav-item">Продавцам техники</a>
-          <a href="#" class="sidebar__nav-item">Партнерам</a>
-          <a href="#" class="sidebar__nav-item">Производителям</a>
-          <a href="#" class="sidebar__nav-item">Наши сервисные центры</a>
-          <a href="#" class="sidebar__nav-item">Контакты</a>
-        </nav>
-        <section class="sidebar__footer">
-          <button type="button" title="Заказать звонок" class="menu-button menu-button--call"></button>
-          <button type="button" title="Обратная связь" class="menu-button menu-button--feedback"></button>
-          <button type="button" title="Профиль" class="menu-button menu-button--profile"></button>
-          <a href="mailto: mail@cps.com" class="sidebar__contacts sidebar__contacts--email">mail@cps.com</a>
-          <a href="tel:88008908900" class="sidebar__contacts sidebar__contacts--phone">8 800 890 8900</a>
-          <span class="sidebar__lang-item--selected">RU</span>
-          <a href="?lang=en" class="sidebar__lang-item">EN</a>
-          <a href="?lang=ch" class="sidebar__lang-item">CH</a>
-        </section>
-      </div>
-    </aside>
     <aside class="modal modal--feedback">
       <div class="modal__content">
         <button type="button" title="Закрыть" class="menu-button menu-button--close"></button>

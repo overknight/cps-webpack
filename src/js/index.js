@@ -12,7 +12,7 @@ import "./swiper.js"
 
 const btnSidebarToggle=document.querySelector("header .menu-button--burger"),
       pageHeader=document.querySelector("body > header"),
-      sidebar=document.querySelector("body > .sidebar"),
+      sidebar=document.querySelector("body > header > .sidebar"),
       sidebarHide=function() {
         btnSidebarToggle.classList.remove("menu-button--close")
         btnSidebarToggle.classList.add("menu-button--burger")
@@ -54,7 +54,7 @@ sidebar.content.addEventListener("transitionend", ()=>{
 
 for (let btn of ["menu-button--call", "menu-button--feedback"]) {
   let sidebarBtn=document.querySelector(".sidebar button."+btn)
-  btn=document.querySelector("button."+btn)
+  btn=document.querySelector(".btn-group-right button."+btn)
 
   let modal=btn.dataset.modalTarget
   modal=document.querySelector(".modal--"+modal)

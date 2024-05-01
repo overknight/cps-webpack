@@ -8,6 +8,10 @@ body {
 
 header {
   display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
   justify-content: space-between;
   background-color: $bgColorPageHeader;
   padding: 15px;
@@ -19,10 +23,7 @@ header {
 
   &.sidebar--visible {
     display: flex;
-    position: static;
-    flex-direction: row;
     justify-content: flex-end;
-    width: auto;
     height: 58px;
 
     .btn-group-left {
@@ -41,7 +42,7 @@ header {
     @media (min-width: $screen-lg) {
       position: absolute;
       width: 100%;
-      height: 30px;
+      height: 67px;
     }
   }
 
@@ -70,12 +71,9 @@ header {
     }
 
     @media (min-width: $screen-lg) {
-      //position: absolute;
       position: fixed;
-      //left: 5px;
       left: 8px;
       top: 12px;
-      //top: -8px;
 
       .divider {
         display: none;
@@ -85,6 +83,7 @@ header {
 
   .btn-group-right {
     @extend %btn-group;
+    margin-right: 15px;
 
     .menu-button--call,
     .menu-button--feedback,
@@ -100,11 +99,6 @@ header {
         display: none;
       }
     }
-
-    @media (min-width: $screen-lg) {
-      //margin-top: 60px;
-      margin-right: 15px;
-    }
   }
 
   .divider {
@@ -119,8 +113,7 @@ header {
     position: absolute;
     padding: 0;
     width: 100%;
-    //height: 15px;
-    height: 30px;
+    height: 67px;
     background: none;
     justify-content: flex-end;
 
@@ -128,6 +121,14 @@ header {
     .menu-button--close {
       display: none;
     }
+  }
+}
+
+main {
+  margin-top: 107px;
+
+  @media (min-width: $screen-lg) {
+    margin-top: auto;
   }
 }
 
